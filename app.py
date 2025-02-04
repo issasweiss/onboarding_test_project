@@ -130,8 +130,8 @@ def configure_prophet_model(params: ProphetParameters) -> Prophet:
     
     return Prophet(**model_args)
 
-@app.post("/forecast/", response_model=ForecastResponse)
-async def create_forecast(request: ForecastRequest):
+@app.post("/forecast/", response_model=ForecastResponse) 
+async def create_forecast(request: ForecastRequest): #this is a method 
     try:
         # Prepare the input data
         df = prepare_data(request.data)

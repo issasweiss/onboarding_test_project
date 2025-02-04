@@ -1,0 +1,48 @@
+syntax = "proto3";
+import "google/protobuf/empty.proto";
+
+message TimeSeriesData {
+    repeated string dates = 1;
+    repeated double values = 2;
+}
+
+message ProphetParameters {
+    double changepoint_prior_scale = 1; 
+    double seasonality_prior_scale = 2;
+    double holidays_prior_scale = 3; 
+    string seasonality_mode = 4; 
+    optional bool yearly_seasonality = 5;
+    optional bool weekly_seasonality = 6; 
+    optional bool daily_seasonality = 7;   
+    string growth = 8;
+    optional double cap = 9; 
+    optional double floor = 10; 
+    int32 n_changepoints = 11; 
+    double changepoint_range = 12;
+}
+
+message ForecastRequest {
+    TimeSeriesData data = 1;
+    int32 periods = 2; 
+    ProphetParameters model_parameters = 3;
+    bool return_components = 4;
+}
+
+message PredictionResponseDictionary {
+    map<string, double> components = 1;
+}
+
+message ForecastResponse {
+    repeated string forecast_dates = 1;
+    repeated double forecast_values = 2;
+    repeated double forecast_lower_bound = 3;
+    repeated double forecast_upper_bound = 4; 
+    repeated PredictionResponseDictionary component = 5; 
+
+}
+
+service ForecastData { 
+    rpc CreateForecast(ForecastRequest) returns (ForecastResponse);
+    rpc GetDefaultParameters(google.protobuf.Empty) returns (ProphetParameters);
+}
+
