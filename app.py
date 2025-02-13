@@ -135,6 +135,7 @@ async def create_forecast(request: ForecastRequest): #this is a method
     try:
         # Prepare the input data
         df = prepare_data(request.data)
+        print(df)
         
         # Configure and train the model
         model_params = request.model_parameters or ProphetParameters()
@@ -184,3 +185,4 @@ if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
 
+create_forecast()

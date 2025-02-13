@@ -1,0 +1,27 @@
+{
+    "version": 1,
+    "display_name": "Forecast",
+    "encoding": "proto",
+    "service_type": "grpc",
+    "service_api_source": "ipfs://QmS987uYFYeBCXFv3oDGq7ukbtvzX3ubViGTDJzkcBxUN1",
+    "mpe_address": "0x7E0aF8988DF45B824b2E0e0A87c6196897744970",
+    "groups": [
+        {
+            "group_name": "default_group",
+            "endpoints": [
+                "http://127.0.0.1:2379"
+            ],
+            "pricing": [
+                {
+                    "price_model": "fixed_price",
+                    "price_in_cogs": 10,
+                    "default": true
+                }
+            ],
+            "group_id": "gz/+/M9l/qxpfNzPn+T2XmTSPMKyphYyxSsQSPhEJXA="
+        }
+    ],
+    "assets": {},
+    "media": [],
+    "tags": []
+}

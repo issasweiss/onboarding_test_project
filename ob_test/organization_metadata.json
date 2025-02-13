@@ -1,0 +1,26 @@
+{
+    "org_name": "Noga",
+    "org_id": "orgo",
+    "org_type": "individual",
+    "description":{"description": "Describe your organization details here ",
+        "short_description": "This is short description of your organization",
+        "url": "https://anyurlofyourorganization"
+    },
+    "assets": {},
+    "contacts": [],
+    "groups": [{"group_name": "default_group",
+            "group_id": "gz/+/M9l/qxpfNzPn+T2XmTSPMKyphYyxSsQSPhEJXA=",
+            "payment": {
+                "payment_address": "0x358C3f2725792d56BC730Ac39403aa1746779840",
+                "payment_expiration_threshold": 100,
+                "payment_channel_storage_type": "etcd",
+                "payment_channel_storage_client": {
+                    "connection_timeout": "100s",
+                    "request_timeout": "5s",
+                    "endpoints": [
+                        "http://127.0.0.1:2379"
+                    ]
+                }
+            }
+        }]
+}
